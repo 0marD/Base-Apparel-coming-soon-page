@@ -2,6 +2,10 @@
   font-size: 16px;
 }
 
+html {
+  background-color: hsl(0deg, 20%, 95%);
+}
+
 body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -11,6 +15,11 @@ body {
   flex-direction: column;
 }
 
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 12px;
+  }
+}
 @media screen and (min-width: 1440px) {
   :root {
     font-size: 21px;
@@ -24,10 +33,23 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media screen and (min-width: 1440px) {
   .container {
     width: 1440px;
+    max-width: none;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-areas: "header hero" "main hero";
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+@media screen and (min-width: 720px) {
+  .container {
+    width: 720px;
     max-width: none;
     background-image: url("../images/bg-pattern-desktop.svg");
     background-repeat: no-repeat;
@@ -55,10 +77,15 @@ body {
     padding: 2em;
   }
 }
+@media screen and (min-width: 720px) {
+  .header {
+    padding: 1em;
+  }
+}
 .header__logo {
   width: 30%;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 720px) {
   .header__logo {
     width: 45%;
   }
@@ -70,7 +97,7 @@ body {
 .hero__desk {
   display: none;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 720px) {
   .hero__desk {
     display: block;
   }
@@ -126,7 +153,7 @@ body {
   border-radius: 1.35em;
   padding: 0.75em 1.7em;
   top: 0;
-  right: 14%;
+  right: 13%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .main__form__btn:hover {
@@ -173,7 +200,7 @@ body {
   font-size: 0.8rem;
   font-weight: 300;
   padding: 1em 0;
-  background-color: white;
+  background-color: inherit;
   color: hsl(0deg, 6%, 24%);
   grid-area: footer;
 }
