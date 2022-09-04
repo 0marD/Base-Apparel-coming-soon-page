@@ -1,0 +1,194 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  color: hsl(0deg, 36%, 70%);
+  background-color: hsla(0deg, 36%, 70%, 0.005);
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    font-size: 21px;
+  }
+}
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    max-width: none;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-areas: "header hero" "main hero";
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.hero,
+.header,
+.main {
+  width: 100%;
+  height: fit-content;
+}
+
+.header {
+  padding: 1.5em;
+  grid-area: header;
+  height: fit-content;
+}
+@media screen and (min-width: 1440px) {
+  .header {
+    padding: 2em;
+  }
+}
+.header__logo {
+  width: 30%;
+}
+@media screen and (min-width: 1440px) {
+  .header__logo {
+    width: 45%;
+  }
+}
+
+.hero {
+  grid-area: hero;
+}
+.hero__desk {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .hero__desk {
+    display: block;
+  }
+  .hero__mobile {
+    display: none;
+  }
+}
+
+.main {
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 5em;
+}
+@media screen and (min-width: 1440px) {
+  .main {
+    padding-top: 2em;
+    padding-bottom: 3em;
+    text-align: left;
+  }
+}
+.main__heading {
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: hsl(0deg, 6%, 24%);
+  letter-spacing: 0.5rem;
+}
+.main__heading__span {
+  font-weight: 300;
+  color: hsl(0deg, 36%, 70%);
+  letter-spacing: 1rem;
+  margin-bottom: 0.5em;
+}
+.main__paragraph {
+  font-size: 0.95rem;
+  padding: 1.5em;
+  line-height: 1.6;
+}
+@media screen and (min-width: 1440) {
+  .main__paragraph {
+    padding-left: 0;
+  }
+}
+.main__form {
+  position: relative;
+  transition: all 0.3s;
+  padding: 0 1.5em;
+}
+.main__form__btn {
+  position: absolute;
+  background-image: linear-gradient(135deg, hsl(0deg, 80%, 86%), hsl(0deg, 74%, 74%));
+  color: white;
+  height: 3.1em;
+  border-radius: 1.35em;
+  padding: 0.75em 1.7em;
+  top: 0;
+  right: 14%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.main__form__btn:hover {
+  cursor: pointer;
+  box-shadow: hsla(0deg, 93%, 68%, 0.5) 0px 5px 15px;
+  background-image: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 74%, 74%));
+}
+.main__form__btn:active {
+  opacity: 0.5;
+}
+.main__form__emailInput {
+  width: 90%;
+  padding: 1em;
+  border: 1px solid hsl(0deg, 36%, 70%);
+  border-radius: 3em;
+  outline: solid transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 75%;
+}
+.main__form__emailInput::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+.main__form__emailInput:focus {
+  outline: 2px solid hsl(0deg, 36%, 70%);
+}
+.main__form__errorMsg {
+  width: 100%;
+  text-align: left;
+  font-size: 0.8rem;
+  margin-top: 0.75em;
+  margin-left: 2em;
+  color: red;
+}
+
+.attribution {
+  margin: auto;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 1em 0;
+  background-color: white;
+  color: hsl(0deg, 6%, 24%);
+  grid-area: footer;
+}
+
+.attribution a {
+  font-weight: 400;
+}
+.attribution a:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 1440px) {
+  .header,
+.main {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+}/*# sourceMappingURL=style.css.map */

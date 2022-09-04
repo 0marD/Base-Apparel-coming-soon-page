@@ -1,0 +1,200 @@
+@use "initial";
+@use "variables";
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    max-width: none;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-areas:
+      "header hero"
+      "main hero";
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.hero,
+.header,
+.main {
+  width: 100%;
+  height: fit-content;
+}
+
+.header {
+  padding: 1.5em;
+  grid-area: header;
+  height: fit-content;
+
+  @media screen and (min-width: 1440px) {
+    padding: 2em;
+  }
+
+  &__logo {
+    width: 30%;
+
+    @media screen and (min-width: 1440px) {
+      width: 45%;
+    }
+  }
+}
+
+.hero {
+  grid-area: hero;
+
+  &__desk {
+    display: none;
+  }
+
+  @media screen and (min-width: 1440px) {
+    &__desk {
+      display: block;
+    }
+
+    &__mobile {
+      display: none;
+    }
+  }
+}
+
+.main {
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 5em;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 2em;
+    padding-bottom: 3em;
+    text-align: left;
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: variables.$Dark-Grayish-Red;
+    letter-spacing: 0.5rem;
+
+    &__span {
+      font-weight: 300;
+      color: variables.$Desaturated-Red;
+      letter-spacing: 1rem;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &__paragraph {
+    font-size: 0.95rem;
+    padding: 1.5em;
+    line-height: 1.6;
+
+    @media screen and (min-width: 1440) {
+      padding-left: 0;
+    }
+  }
+
+  &__form {
+    position: relative;
+    transition: all 0.3s;
+    padding: 0 1.5em;
+
+    &__btn {
+      position: absolute;
+      background-image: linear-gradient(
+        135deg,
+        variables.$gradient-2-color--1,
+        variables.$gradient-2-color--2
+      );
+      color: white;
+      height: 3.1em;
+      border-radius: 1.35em;
+      padding: 0.75em 1.7em;
+      top: 0;
+      right: 14%;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: hsla(0, 93%, 68%, 0.5) 0px 5px 15px;
+        background-image: linear-gradient(
+          135deg,
+          variables.$gradient-1-color--1,
+          variables.$gradient-2-color--2
+        );
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    &__emailInput {
+      width: 90%;
+      padding: 1em;
+      border: 1px solid variables.$Desaturated-Red;
+      border-radius: 3em;
+      outline: solid transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-position: 75%;
+
+      &::placeholder {
+        color: inherit;
+        opacity: 0.5;
+      }
+
+      &:focus {
+        outline: 2px solid variables.$Desaturated-Red;
+      }
+    }
+
+    &__errorMsg {
+      width: 100%;
+      text-align: left;
+      font-size: 0.8rem;
+      margin-top: 0.75em;
+      margin-left: 2em;
+      color: red;
+    }
+  }
+}
+
+.attribution {
+  margin: auto;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 1em 0;
+  background-color: white;
+  color: variables.$Dark-Grayish-Red;
+  grid-area: footer;
+}
+
+.attribution a {
+  font-weight: 400;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header,
+  .main {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+}
